@@ -9,7 +9,7 @@ const HeadBox = (Student:Student) => {
             <Box w='40px' h='40px' bg='yellow.200'>
                 <Avatar.Root>
                           <Avatar.Fallback name="Damigu Djagbaré" />
-                          <Avatar.Image src={`StudentPics/${Student.number}.jfif`} />
+                          <Avatar.Image src={`../studentPics/${Student.number}.jfif`} />
                 </Avatar.Root>
             </Box>
             <Box w='40px' h='40px' bg='tomato'>
