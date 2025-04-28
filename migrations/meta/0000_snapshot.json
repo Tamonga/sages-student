@@ -1,0 +1,2178 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "6",
+  "dialect": "sqlite",
+  "tables": {
+    "SystemeScolaires": {
+      "name": "SystemeScolaires",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "PrimaryOwner": {
+          "autoincrement": false,
+          "name": "PrimaryOwner",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "SecondaryOwner": {
+          "autoincrement": false,
+          "name": "SecondaryOwner",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Country": {
+          "autoincrement": false,
+          "name": "Country",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Enseignements": {
+      "name": "Enseignements",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "SystemeScolaireId": {
+          "autoincrement": false,
+          "name": "SystemeScolaireId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Enseignements_SystemeScolaireId_SystemeScolaires_Id_fk": {
+          "name": "Enseignements_SystemeScolaireId_SystemeScolaires_Id_fk",
+          "tableFrom": "Enseignements",
+          "tableTo": "SystemeScolaires",
+          "columnsFrom": [
+            "SystemeScolaireId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Niveaus": {
+      "name": "Niveaus",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Ranking": {
+          "autoincrement": false,
+          "name": "Ranking",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "EnseignementId": {
+          "autoincrement": false,
+          "name": "EnseignementId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Niveaus_EnseignementId_Enseignements_Id_fk": {
+          "name": "Niveaus_EnseignementId_Enseignements_Id_fk",
+          "tableFrom": "Niveaus",
+          "tableTo": "Enseignements",
+          "columnsFrom": [
+            "EnseignementId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Series": {
+      "name": "Series",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "EnseignementId": {
+          "autoincrement": false,
+          "name": "EnseignementId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Series_EnseignementId_Enseignements_Id_fk": {
+          "name": "Series_EnseignementId_Enseignements_Id_fk",
+          "tableFrom": "Series",
+          "tableTo": "Enseignements",
+          "columnsFrom": [
+            "EnseignementId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Classes": {
+      "name": "Classes",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "NiveauId": {
+          "autoincrement": false,
+          "name": "NiveauId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "SerieId": {
+          "autoincrement": false,
+          "name": "SerieId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Classes_SerieId_Series_Id_fk": {
+          "name": "Classes_SerieId_Series_Id_fk",
+          "tableFrom": "Classes",
+          "tableTo": "Series",
+          "columnsFrom": [
+            "SerieId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Classes_NiveauId_Niveaus_Id_fk": {
+          "name": "Classes_NiveauId_Niveaus_Id_fk",
+          "tableFrom": "Classes",
+          "tableTo": "Niveaus",
+          "columnsFrom": [
+            "NiveauId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Ecoles": {
+      "name": "Ecoles",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "FullName": {
+          "autoincrement": false,
+          "name": "FullName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ShortName": {
+          "autoincrement": false,
+          "name": "ShortName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Address": {
+          "autoincrement": false,
+          "name": "Address",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Establishment": {
+          "autoincrement": false,
+          "name": "Establishment",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "MainEmail": {
+          "autoincrement": false,
+          "name": "MainEmail",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "MainPhone": {
+          "autoincrement": false,
+          "name": "MainPhone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "SalleClasses": {
+      "name": "SalleClasses",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "AnneeScolaireId": {
+          "autoincrement": false,
+          "name": "AnneeScolaireId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ClasseId": {
+          "autoincrement": false,
+          "name": "ClasseId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "EcoleId": {
+          "autoincrement": false,
+          "name": "EcoleId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "SalleClasses_EcoleId_Ecoles_Id_fk": {
+          "name": "SalleClasses_EcoleId_Ecoles_Id_fk",
+          "tableFrom": "SalleClasses",
+          "tableTo": "Ecoles",
+          "columnsFrom": [
+            "EcoleId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "SalleClasses_ClasseId_Classes_Id_fk": {
+          "name": "SalleClasses_ClasseId_Classes_Id_fk",
+          "tableFrom": "SalleClasses",
+          "tableTo": "Classes",
+          "columnsFrom": [
+            "ClasseId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "SalleClasses_AnneeScolaireId_AnneeScolaires_Id_fk": {
+          "name": "SalleClasses_AnneeScolaireId_AnneeScolaires_Id_fk",
+          "tableFrom": "SalleClasses",
+          "tableTo": "AnneeScolaires",
+          "columnsFrom": [
+            "AnneeScolaireId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Genders": {
+      "name": "Genders",
+      "columns": {
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Value": {
+          "autoincrement": false,
+          "name": "Value",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "TimeTableItemStatus": {
+      "name": "TimeTableItemStatus",
+      "columns": {
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Value": {
+          "autoincrement": false,
+          "name": "Value",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "TimeTableItemTypes": {
+      "name": "TimeTableItemTypes",
+      "columns": {
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Value": {
+          "autoincrement": false,
+          "name": "Value",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "AbsenceTypes": {
+      "name": "AbsenceTypes",
+      "columns": {
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Value": {
+          "autoincrement": false,
+          "name": "Value",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "AttendanceTypes": {
+      "name": "AttendanceTypes",
+      "columns": {
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Value": {
+          "autoincrement": false,
+          "name": "Value",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Status": {
+      "name": "Status",
+      "columns": {
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Value": {
+          "autoincrement": false,
+          "name": "Value",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "TimeTables": {
+      "name": "TimeTables",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "SalleClasseId": {
+          "autoincrement": false,
+          "name": "SalleClasseId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "TimeTables_SalleClasseId_SalleClasses_Id_fk": {
+          "name": "TimeTables_SalleClasseId_SalleClasses_Id_fk",
+          "tableFrom": "TimeTables",
+          "tableTo": "SalleClasses",
+          "columnsFrom": [
+            "SalleClasseId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Inscriptions": {
+      "name": "Inscriptions",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "DateInscription": {
+          "autoincrement": false,
+          "name": "DateInscription",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "EndInscription": {
+          "autoincrement": false,
+          "name": "EndInscription",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "StatusCode": {
+          "default": "'A'",
+          "autoincrement": false,
+          "name": "StatusCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "EleveId": {
+          "autoincrement": false,
+          "name": "EleveId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "SalleClasseId": {
+          "autoincrement": false,
+          "name": "SalleClasseId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Inscriptions_SalleClasseId_SalleClasses_Id_fk": {
+          "name": "Inscriptions_SalleClasseId_SalleClasses_Id_fk",
+          "tableFrom": "Inscriptions",
+          "tableTo": "SalleClasses",
+          "columnsFrom": [
+            "SalleClasseId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Inscriptions_EleveId_Eleves_Id_fk": {
+          "name": "Inscriptions_EleveId_Eleves_Id_fk",
+          "tableFrom": "Inscriptions",
+          "tableTo": "Eleves",
+          "columnsFrom": [
+            "EleveId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Inscriptions_StatusCode_Status_Code_fk": {
+          "name": "Inscriptions_StatusCode_Status_Code_fk",
+          "tableFrom": "Inscriptions",
+          "tableTo": "Status",
+          "columnsFrom": [
+            "StatusCode"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "AnneeScolaires": {
+      "name": "AnneeScolaires",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "StartDate": {
+          "autoincrement": false,
+          "name": "StartDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "EndDate": {
+          "autoincrement": false,
+          "name": "EndDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Matieres": {
+      "name": "Matieres",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Name": {
+          "autoincrement": false,
+          "name": "Name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "SalleClasseMatieres": {
+      "name": "SalleClasseMatieres",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Coefficient": {
+          "autoincrement": false,
+          "name": "Coefficient",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "SalleClasseId": {
+          "autoincrement": false,
+          "name": "SalleClasseId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "MatiereId": {
+          "autoincrement": false,
+          "name": "MatiereId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "SalleClasseMatieres_SalleClasseId_SalleClasses_Id_fk": {
+          "name": "SalleClasseMatieres_SalleClasseId_SalleClasses_Id_fk",
+          "tableFrom": "SalleClasseMatieres",
+          "tableTo": "SalleClasses",
+          "columnsFrom": [
+            "SalleClasseId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "SalleClasseMatieres_MatiereId_Matieres_Id_fk": {
+          "name": "SalleClasseMatieres_MatiereId_Matieres_Id_fk",
+          "tableFrom": "SalleClasseMatieres",
+          "tableTo": "Matieres",
+          "columnsFrom": [
+            "MatiereId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Eleves": {
+      "name": "Eleves",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Number": {
+          "autoincrement": false,
+          "name": "Number",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "LastName": {
+          "autoincrement": false,
+          "name": "LastName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "FirstName": {
+          "autoincrement": false,
+          "name": "FirstName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "OtherNames": {
+          "autoincrement": false,
+          "name": "OtherNames",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "GenderCode": {
+          "autoincrement": false,
+          "name": "GenderCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateOfBirth": {
+          "autoincrement": false,
+          "name": "DateOfBirth",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Email": {
+          "autoincrement": false,
+          "name": "Email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Phone": {
+          "autoincrement": false,
+          "name": "Phone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Eleves_GenderCode_Genders_Code_fk": {
+          "name": "Eleves_GenderCode_Genders_Code_fk",
+          "tableFrom": "Eleves",
+          "tableTo": "Genders",
+          "columnsFrom": [
+            "GenderCode"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Enseignants": {
+      "name": "Enseignants",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Number": {
+          "autoincrement": false,
+          "name": "Number",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "LastName": {
+          "autoincrement": false,
+          "name": "LastName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "FirstName": {
+          "autoincrement": false,
+          "name": "FirstName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "OtherNames": {
+          "autoincrement": false,
+          "name": "OtherNames",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "GenderCode": {
+          "autoincrement": false,
+          "name": "GenderCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateOfBirth": {
+          "autoincrement": false,
+          "name": "DateOfBirth",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Email": {
+          "autoincrement": false,
+          "name": "Email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Phone": {
+          "autoincrement": false,
+          "name": "Phone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Enseignants_GenderCode_Genders_Code_fk": {
+          "name": "Enseignants_GenderCode_Genders_Code_fk",
+          "tableFrom": "Enseignants",
+          "tableTo": "Genders",
+          "columnsFrom": [
+            "GenderCode"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Instructions": {
+      "name": "Instructions",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Date": {
+          "autoincrement": false,
+          "name": "Date",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ActualStartTime": {
+          "autoincrement": false,
+          "name": "ActualStartTime",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ActualEndTime": {
+          "autoincrement": false,
+          "name": "ActualEndTime",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "TimeTableItemId": {
+          "autoincrement": false,
+          "name": "TimeTableItemId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Instructions_TimeTableItemId_TimeTableItems_Id_fk": {
+          "name": "Instructions_TimeTableItemId_TimeTableItems_Id_fk",
+          "tableFrom": "Instructions",
+          "tableTo": "TimeTableItems",
+          "columnsFrom": [
+            "TimeTableItemId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "PortfolioEnseignants": {
+      "name": "PortfolioEnseignants",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "StartDate": {
+          "autoincrement": false,
+          "name": "StartDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "EndDate": {
+          "autoincrement": false,
+          "name": "EndDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "StatusCode": {
+          "default": "'A'",
+          "autoincrement": false,
+          "name": "StatusCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "SalleClasseMatiereId": {
+          "autoincrement": false,
+          "name": "SalleClasseMatiereId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "EnseignantId": {
+          "autoincrement": false,
+          "name": "EnseignantId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "PortfolioEnseignants_EnseignantId_Enseignants_Id_fk": {
+          "name": "PortfolioEnseignants_EnseignantId_Enseignants_Id_fk",
+          "tableFrom": "PortfolioEnseignants",
+          "tableTo": "Enseignants",
+          "columnsFrom": [
+            "EnseignantId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "PortfolioEnseignants_SalleClasseMatiereId_SalleClasseMatieres_Id_fk": {
+          "name": "PortfolioEnseignants_SalleClasseMatiereId_SalleClasseMatieres_Id_fk",
+          "tableFrom": "PortfolioEnseignants",
+          "tableTo": "SalleClasseMatieres",
+          "columnsFrom": [
+            "SalleClasseMatiereId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "PortfolioEnseignants_StatusCode_Status_Code_fk": {
+          "name": "PortfolioEnseignants_StatusCode_Status_Code_fk",
+          "tableFrom": "PortfolioEnseignants",
+          "tableTo": "Status",
+          "columnsFrom": [
+            "StatusCode"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "TimeTableItems": {
+      "name": "TimeTableItems",
+      "columns": {
+        "Id": {
+          "default": "(hex(randomblob(16)))",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "ScheduledDate": {
+          "autoincrement": false,
+          "name": "ScheduledDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ScheduledStartTime": {
+          "autoincrement": false,
+          "name": "ScheduledStartTime",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Description": {
+          "autoincrement": false,
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "TimeTableId": {
+          "autoincrement": false,
+          "name": "TimeTableId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "StatusCode": {
+          "default": "'P'",
+          "autoincrement": false,
+          "name": "StatusCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "TypeCode": {
+          "default": "'I'",
+          "autoincrement": false,
+          "name": "TypeCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "MatiereId": {
+          "autoincrement": false,
+          "name": "MatiereId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ScheduledEndTime": {
+          "autoincrement": false,
+          "name": "ScheduledEndTime",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "TimeTableItems_MatiereId_Matieres_Id_fk": {
+          "name": "TimeTableItems_MatiereId_Matieres_Id_fk",
+          "tableFrom": "TimeTableItems",
+          "tableTo": "Matieres",
+          "columnsFrom": [
+            "MatiereId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "TimeTableItems_TypeCode_TimeTableItemTypes_Code_fk": {
+          "name": "TimeTableItems_TypeCode_TimeTableItemTypes_Code_fk",
+          "tableFrom": "TimeTableItems",
+          "tableTo": "TimeTableItemTypes",
+          "columnsFrom": [
+            "TypeCode"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "TimeTableItems_StatusCode_TimeTableItemStatus_Code_fk": {
+          "name": "TimeTableItems_StatusCode_TimeTableItemStatus_Code_fk",
+          "tableFrom": "TimeTableItems",
+          "tableTo": "TimeTableItemStatus",
+          "columnsFrom": [
+            "StatusCode"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "TimeTableItems_TimeTableId_TimeTables_Id_fk": {
+          "name": "TimeTableItems_TimeTableId_TimeTables_Id_fk",
+          "tableFrom": "TimeTableItems",
+          "tableTo": "TimeTables",
+          "columnsFrom": [
+            "TimeTableId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "TypeSagesUsers": {
+      "name": "TypeSagesUsers",
+      "columns": {
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Value": {
+          "autoincrement": false,
+          "name": "Value",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "TypeSagesResources": {
+      "name": "TypeSagesResources",
+      "columns": {
+        "Code": {
+          "autoincrement": false,
+          "name": "Code",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Value": {
+          "autoincrement": false,
+          "name": "Value",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "SagesUserResources": {
+      "name": "SagesUserResources",
+      "columns": {
+        "Id": {
+          "default": "'(hex(randomblob(16)))'",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "TypeResource": {
+          "autoincrement": false,
+          "name": "TypeResource",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "UserId": {
+          "autoincrement": false,
+          "name": "UserId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ResourceId": {
+          "autoincrement": false,
+          "name": "ResourceId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "SagesUserResources_UserId_SagesUsers_Id_fk": {
+          "name": "SagesUserResources_UserId_SagesUsers_Id_fk",
+          "tableFrom": "SagesUserResources",
+          "tableTo": "SagesUsers",
+          "columnsFrom": [
+            "UserId"
+          ],
+          "columnsTo": [
+            "Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "SagesUserResources_TypeResource_TypeSagesResources_Code_fk": {
+          "name": "SagesUserResources_TypeResource_TypeSagesResources_Code_fk",
+          "tableFrom": "SagesUserResources",
+          "tableTo": "TypeSagesResources",
+          "columnsFrom": [
+            "TypeResource"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "SagesUsers": {
+      "name": "SagesUsers",
+      "columns": {
+        "Id": {
+          "default": "'(hex(randomblob(16)))'",
+          "autoincrement": false,
+          "name": "Id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "Login": {
+          "autoincrement": false,
+          "name": "Login",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Password": {
+          "autoincrement": false,
+          "name": "Password",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Salt": {
+          "autoincrement": false,
+          "name": "Salt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Type": {
+          "autoincrement": false,
+          "name": "Type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Status": {
+          "autoincrement": false,
+          "name": "Status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Email": {
+          "autoincrement": false,
+          "name": "Email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Phone": {
+          "autoincrement": false,
+          "name": "Phone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CreatedBy": {
+          "autoincrement": false,
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "DateCreated": {
+          "autoincrement": false,
+          "name": "DateCreated",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ModifiedBy": {
+          "autoincrement": false,
+          "name": "ModifiedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "DateModified": {
+          "autoincrement": false,
+          "name": "DateModified",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "SagesUsers_Status_Status_Code_fk": {
+          "name": "SagesUsers_Status_Status_Code_fk",
+          "tableFrom": "SagesUsers",
+          "tableTo": "Status",
+          "columnsFrom": [
+            "Status"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "SagesUsers_Type_TypeSagesUsers_Code_fk": {
+          "name": "SagesUsers_Type_TypeSagesUsers_Code_fk",
+          "tableFrom": "SagesUsers",
+          "tableTo": "TypeSagesUsers",
+          "columnsFrom": [
+            "Type"
+          ],
+          "columnsTo": [
+            "Code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {},
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
